@@ -1,2 +1,21 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+Authentication Required 
+Please log in to continue
+
+<%- if flash[:error] %>
+    <%= flash[:error] %>
+<%- elsif flash[:success] %>
+    <%= flash[:success] %>
+<% end %>
+
+<% form_for :session, url: sessions_path do |form| %>
+
+    <%= form.label :email %>
+    <%= form.email_field :email, class: 'form-control', placeholder: 'Email' %>
+
+    <%= form.label :password %>
+    <%= form.password_field :password, class: 'form-control', placeholder: 'Password'%>
+
+    <%= form.submit 'Log In', class: 'btn btn-primary' %>
+<% end %>
+
+New User? <%= link_to 'Create an account', new_user_path %>
