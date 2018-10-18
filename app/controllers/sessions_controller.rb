@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
 
   def create
     reset_session
-    @user = User.find_by(email: [session_params[:email]])
+    @user = User.find_by(email: [sessions_params[:email]])
 
-    if @user && @user.authenticate(session_params[:password])
+    if @user && @user.authenticate(sessions_params[:password])
       session[:user_id] = @user.id
       flash[:success] = 'Welcome back'  
       redirect_to root_path

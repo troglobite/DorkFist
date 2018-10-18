@@ -7,7 +7,7 @@ Please log in to continue
     <%= flash[:success] %>
 <% end %>
 
-<% form_for :session, url: sessions_path do |form| %>
+<%= form_for :session, url: sessions_path do |form| %>
 
     <%= form.label :email %>
     <%= form.email_field :email, class: 'form-control', placeholder: 'Email' %>
