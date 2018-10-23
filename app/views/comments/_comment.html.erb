@@ -1,11 +1,13 @@
 <p>
     <strong>Commenter:</strong>
+    <%= link_to 'Profile', user_path(@user) %>
     <strong><%= comment.user.email %> </strong>
 </p>
+
 <p>
     <strong>Title:</strong>
     <%= comment.commenter %><br>
-<p>
+</p>
 
 <p>
     <strong>Comment:</strong>
@@ -13,6 +15,6 @@
 </p>
 
 <p>
-    <%= link_to 'Edit', edit_article_comment_path(comment) %></br>
+    <%= link_to 'Edit', edit_article_comment_path(comment) %><br>
     <%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: {confirm: 'are you sure?'} %>
 </p>
