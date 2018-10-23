@@ -1,4 +1,17 @@
 <p>
+    <h1>Profile View</h1>
     <strong>User</strong>
-    <%= @user.email %>
+    <%= @user.email %><br>
 </p>
+
+<%= @comments.each do |comment|%>
+<p>
+    <strong>Title:</strong>
+    <%= comment.commenter %><br>
+</p>
+
+<p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+</p>
+<% end %>
