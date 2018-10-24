@@ -3,7 +3,20 @@
     <strong>User</strong>
     <%= @user.email %><br>
 </p>
+<h3>Articles: </h3>
+<div>
+    <% @article.each do |article| %>
+        <div>
+            <strong>Articles</strong> 
+            <%= article.title %>
+        </div>
+        <div>
+            <p><%= article.text %></p>
+        </div>
+    <% end %>
+</div>
 
+<h3>Comments: </h3>
 <% @comments.each do |comment|%>
 <p>
     <strong>Title:</strong>
