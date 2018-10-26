@@ -5,6 +5,7 @@
 <p>
     <strong>Text:</strong>
     <%= @article.text %>
+    <%= link_to 'Like', new_user_article_like_path %>
 </p>
 
     <strong>Posted by: </strong><%= @article.user.email %>
