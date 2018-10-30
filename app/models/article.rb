@@ -6,6 +6,6 @@ class Article < ApplicationRecord
                     length: { minimum: 5 }
 
     def as_json(option = {})
-        super(options.merge(include: [:user, comments: {include: :user}]))
+        super(options.merge(include: [:user, comments: {include: :user}, likes: {include: :user}]))
     end
 end
