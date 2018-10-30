@@ -12,7 +12,7 @@ class LikesController < ApplicationController
         @like = Like.new(likes)
         @like.save!
         if @like.save 
-            redirect_to article_path
+            redirect_to article_path(@article)
         end
     end
 
