@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'articles#index'
+  root 'welcome#index'
  
   get 'users/new'
   get 'login', to: 'sessions#new'
