@@ -20,17 +20,6 @@ class LikesController < ApplicationController
         end
     end
 
-    # def self.exists?
-    #     @user = current_user.id
-    #     @article = params[:article_id]
-    #     @like = Like.where(user_id: @user.id, article_id: @article.id)
-    #     if @like
-    #         return true
-    #     else 
-    #         return false
-    #     end
-    # end
-
     private
     def like_params
         params.require(:likes).permit(:user_id, :article_id)
