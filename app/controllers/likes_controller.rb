@@ -1,6 +1,5 @@
 class LikesController < ApplicationController
 
-
     def def new
         @like = Like.new(like_params)
     end
@@ -10,7 +9,7 @@ class LikesController < ApplicationController
         @article = params[:article_id]
         likes = {user_id: @user, article_id: @article}
         @like = Like.new(likes)
-        if @like.exits?
+        if Like.where(user_id: @user, article_id: @article).present?
             redirect_to article_path(@article)
         else
             @like.save!
@@ -21,16 +20,16 @@ class LikesController < ApplicationController
         end
     end
 
-    def self.exists?
-        @user = current_user.id
-        @article = params[:article_id]
-        @like = Like.where(user_id: @user.id, article_id: @article.id)
-        if @like
-            return true
-        else 
-            return false
-        end
-    end
+    # def self.exists?
+    #     @user = current_user.id
+    #     @article = params[:article_id]
+    #     @like = Like.where(user_id: @user.id, article_id: @article.id)
+    #     if @like
+    #         return true
+    #     else 
+    #         return false
+    #     end
+    # end
 
     private
     def like_params
