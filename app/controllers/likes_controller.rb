@@ -20,6 +20,10 @@ class LikesController < ApplicationController
         end
     end
 
+    def destroy 
+        @like = Like.where(user_id: @user, article_id: @article)
+    end
+
     private
     def like_params
         params.require(:likes).permit(:user_id, :article_id)
