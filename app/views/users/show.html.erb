@@ -29,6 +29,15 @@
 </p>
 <% end %>
 
+<div>
+    <strong>Likes</strong>
+    <% @likes.each do |like| %>
+    <div>
+        <%= @article.find_by(id: like.article_id).title %>
+    </div>
+    <% end %>
+</div>
+
 <p>
     <%= link_to 'Back to articles', articles_path %>
 </p>

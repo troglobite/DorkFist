@@ -8,8 +8,12 @@ class UsersController < ApplicationController
 
   def show 
     @user = User.find(params[:id])
-    @comments = Comment.where(:user_id => @user.id)
-    @article = Article.where(:user_id => @user.id)
+    if @user
+      @comments = Comment.where(:user_id => @user.id)
+      @article = Article.where(:user_id => @user.id)
+      @likes = Like.where(:user_id => @user.id)
+      # @likes = @user.liked_articles
+    end
   end
 
   def create
@@ -21,6 +25,9 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def logged_in?
   end
 
   private
