@@ -1,0 +1,25 @@
+%div 
+    %strong= "Title:"
+    = @article.title
+
+%div
+    %strong= "Text: "
+    = @article.text
+    - if session[:user_id] != @user.id
+        = link_to 'Like', user_article_likes_path(@user, @article), method: :post
+
+%div 
+    %strong= "Posted by: "
+    %strong= @article.user.email
+
+%div 
+    %h4= "Comments"
+    %div= render @article.comments
+%div
+    %h2= "Add a comment"
+    = render 'comments/form'
+
+%div
+    = link_to 'Edit', edit_article_path(@article)
+    = link_to 'Back', articles_path 
+    = link_to 'Log Out', logout_path 
