@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(sessions_params[:password])
       session[:user_id] = @user.id
-      flash[:success] = 'Welcome back'  
+      flash[:success] = 'Welcome back'
       redirect_to root_path
     else
       flash[:error] = 'Wrong email and password combination'

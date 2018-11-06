@@ -5,6 +5,7 @@
 <p>
     <strong>Text:</strong>
     <%= @article.text %>
+    <%= if @user.logged_in?  %>
     <%= link_to 'Like', user_article_likes_path(@user, @article), method: :post %>
 </p>
 
