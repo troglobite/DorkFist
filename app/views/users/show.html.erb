@@ -33,7 +33,7 @@
     <strong>Likes</strong>
     <% @likes.each do |like| %>
     <div>
-        <%= @article.find_by(id: like.article_id).title %>
+        <%=link_to @article.find_by(id: like.article_id).title, articles_path(like.article.id) %>
     </div>
     <% end %>
 </div>
