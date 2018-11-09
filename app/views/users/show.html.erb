@@ -6,17 +6,9 @@
 
 <%= render :partial => "articles" %>
 
-<%= render :partial => "comments"%>
+<%= render :partial => "comments" %>
 
-<div>
-    <strong>Likes</strong>
-    <% @likes.each do |like| %>
-    <div>
-        <%=link_to @article.find_by(id: like.article_id).title, articles_path(like.article.id) %>
-    </div>
-    <% end %>
-</div>
-
+<%= render :partial => "likes" %>
 <p>
     <%= link_to 'Back to articles', articles_path, method: :post %>
 </p>

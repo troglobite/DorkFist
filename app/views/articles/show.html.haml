@@ -10,7 +10,7 @@
 
 %div 
     %strong= "Posted by: "
-    %strong= @article.user.email
+    %strong= link_to @article.user.email, user_path(@article.user_id)
 
 %div 
     %h4= "Comments"
