@@ -1,0 +1,9 @@
+%h3="Comments: "
+%div
+    - @comments.each do |comment|
+        %h5= "Commenter"
+        %dl
+            %dt 
+                = comment.commenter
+            %dd 
+                = comment.body
