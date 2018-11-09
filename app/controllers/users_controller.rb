@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  skip_before_action :require_valid_user!
-  before_action :reset_session
+  # skip_before_action :require_valid_user!
+  # before_action :reset_session
 
   def new
     @user = User.new
@@ -12,7 +12,6 @@ class UsersController < ApplicationController
       @comments = Comment.where(:user_id => @user.id)
       @article = Article.where(:user_id => @user.id)
       @likes = Like.where(:user_id => @user.id)
-      # @likes = @user.liked_articles
     end
   end
 

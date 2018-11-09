@@ -5,8 +5,8 @@
 %div
     %strong= "Text: "
     = @article.text
-    - if session[:user_id] != @user.id
-        = link_to 'Like', user_article_likes_path(@user, @article), method: :post
+    - if current_user != @article.user_id
+        = link_to 'Like', user_article_likes_path(current_user.id, @article), method: :post
 
 %div 
     %strong= "Posted by: "

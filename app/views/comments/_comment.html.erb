@@ -1,6 +1,6 @@
 <p>
     <strong>Commenter:</strong>
-    <%= link_to 'Profile', user_path(@user) %>
+    <%= link_to 'Profile', user_path(comment.user_id) %>
     <strong><%= comment.user.email %> </strong>
 </p>
 

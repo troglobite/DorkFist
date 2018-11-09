@@ -9,6 +9,9 @@
 <%= render :partial => "comments" %>
 
 <%= render :partial => "likes" %>
+
+<%= @user.id %>
+<%= @session %>
 <p>
-    <%= link_to 'Back to articles', articles_path, method: :post %>
+    <%= link_to 'Back to articles', articles_path, method: :get %>
 </p>

@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   get 'users/:id', to: 'users#show'
   get '/users/:user_id/articles/:article_id/likes/new(.:format)', to: 'likes#new'
 
-  resources :sessions, only: [:create]
+  resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show]
-
 
   resources :articles do
     resources :comments
