@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     def edit
         @article = Article.find(params[:article_id])
         @comment = Article.joins(:comments)
+        # @comment = Comment.find_by(id: params[:id], article_id: @article.id)
     end
 
     def update

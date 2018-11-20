@@ -10,10 +10,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show]
 
-  resources :articles do
-    resources :comments
-  end
-
   resources :users do 
     resources :articles do 
       resources :likes
@@ -22,6 +18,10 @@ Rails.application.routes.draw do
 
   resources :articles do 
     resources :likes
+  end
+
+  resources :articles do
+    resources :comments
   end
 
 end
