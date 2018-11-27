@@ -1,7 +1,7 @@
-class NewArticleService
+class NewArticlesService
     
     def initialize(params)
-        @article = params[:id]
+        @article = article_params
     end
 
     def call

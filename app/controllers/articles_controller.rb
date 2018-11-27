@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        @article = NewArticleService.new(params).call
+        @article = NewArticlesService.new(params).call
         if @article.save
             redirect_to @article
         else
