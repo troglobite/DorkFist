@@ -1,10 +1,14 @@
+require 'pry'
+
 class NewArticlesService
     
-    def initialize(params)
+    def initialize(article_params, current_user)
         @article = article_params
+        @user = current_user
     end
 
     def call
-        article = Article.new(article_params.merge(user_id: current_user.id))
+        binding.pry
+        article = Article.new(@article.merge(user_id: @user))
     end
 end
