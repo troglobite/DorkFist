@@ -4,6 +4,7 @@ class Article < ApplicationRecord
     has_many :likes, dependent: :destroy
     validates :title, presence: true,
                     length: { minimum: 5 }
+    validates :user_id, presence: true
 
     def as_json(option = {})
         super(options.merge(include: [:user, comments: {include: :user}, likes: {include: :user}]))
