@@ -6,8 +6,12 @@
         %div.col-sm
             %strong= "Posted by: "
             %strong= link_to @article.user.email, user_path(@article.user_id)
-        - if current_user != @article.user_id
-            %div.col-sm= link_to 'Like', user_article_likes_path(current_user.id, @article), method: :post
+            %small=" @ "
+            %small=@article.updated_at
+            - if @article.updated_at != @article.created_at
+                %small.badge.badge-dark=" Edited "
+        - if current_user.id != @article.user_id
+            %div.btn.btn-outline-primary.btn-sm= link_to 'Like', user_article_likes_path(current_user.id, @article), method: :post
 
 %div.container 
     %h4.alert.alert-primary= "Comments"
@@ -18,7 +22,7 @@
     = render 'comments/form'
 
 %div
-    - if current_user == @article.user_id
+    - if current_user.id == @article.user_id
         = link_to 'Edit', edit_article_path(@article)
     = link_to 'Back', articles_path 
     = link_to 'Log Out', logout_path 

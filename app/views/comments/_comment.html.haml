@@ -1,0 +1,14 @@
+%div.card
+
+    %div.card-text
+        = comment.body
+        %div
+            %strong="By: "
+            %strong= link_to comment.user.email, user_path(comment.user_id)
+        %div
+            %small=" at "
+            %small= comment.updated_at
+- if comment.user_id == current_user.id
+    %div.card-text
+        %small.btn.btn-outline-primary.btn-sm= link_to 'Edit', edit_article_comment_path(comment.article, comment)
+        %small.btn.btn-outline-primary.btn-sm= link_to 'Delete', [comment.article, comment], method: :delete, data: {confirm: 'are you sure?'}
