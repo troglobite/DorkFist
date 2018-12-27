@@ -24,5 +24,5 @@
 %div
     - if current_user.id == @article.user_id
         = link_to 'Edit', edit_article_path(@article)
-    = link_to 'Back', articles_path 
-    = link_to 'Log Out', logout_path 
+    = link_to 'Back', articles_path, :class => 'btn btn-outline-primary', :id => 'back-btn'
+    = link_to 'Log Out', logout_path , :class => 'btn btn-outline-primary', :id => 'logout-btn'
