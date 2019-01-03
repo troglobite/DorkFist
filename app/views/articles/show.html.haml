@@ -13,7 +13,7 @@
         - if current_user.id != @article.user_id
             %div.btn.btn-outline-primary.btn-sm= link_to 'Like', user_article_likes_path(current_user.id, @article), method: :post
 
-%div.container 
+%div.container
     %h4.alert.alert-primary= "Comments"
     %div= render @article.comments
 
