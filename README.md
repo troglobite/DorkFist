@@ -3,20 +3,20 @@ This is a basic rails application i started that i use as a kitchen sink project
 
 Why reddit specifically you may ask. "Start with what you know" i always say. I use reddit every day. it is my social media addiction of choice so it seemed like a natural candidate when i wanted a kitchen sink project. Reddit has alot of functionality that will take me a long time at my current level to copy, and alot of potential functionality that sounded fun to build.
 
-* Ruby version
-  2.3.7
-* Setup
+Ruby version: 2.3.7
+
+Setup:
 The setup is pretty basic rails app stuff. if you are familiar with rails app nothing here should surprise you.
 `bundle install`
 `bin/rails s`
 
-* Database creation
-- `bin/rake db:create`
-- `bin/rake db:seed'
-- `bin/rake db:migrate'
+Database creation:
+`bin/rake db:create`
+`bin/rake db:seed`
+`bin/rake db:migrate`
 
-* How to run the test suite
+How to run the test suite:
 Not created yet ... i know, i know im terrible
 
-* Deployment instructions
+Deployment instructions:
 Not currently deployed to anything.
