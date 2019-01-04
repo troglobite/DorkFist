@@ -1,9 +1,10 @@
+= render 'shared/nav_bar'
 %div.jumbotron.jumbotron-fluid
     .container    
-        %h1.display-4= "List of articles"
-        = link_to 'New Article', new_article_path, class: "btn btn-primary btn-block"
+        %h1.display-4= "The Kitchen Sink"
 
-
+%div.container-fluid
+    = link_to 'New Article', new_article_path, class: "btn btn-primary btn-block"
 - @article.each do |article|
     .card
         %h5.card-title= article.title

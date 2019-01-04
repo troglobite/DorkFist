@@ -1,0 +1,9 @@
+%ul.nav
+    %li.nav-item
+        =image_tag 'sink-512.png', :class => 'navbar-brand small-image'
+    %li.nav-item
+        %a.nav-link.btn.btn-primary.btn-lg{:href => articles_path} Home
+    %li.nav-item
+        %a.nav-link.btn.btn-primary.btn-lg{:href => user_path(current_user)} Profile
+    %li.nav-item
+        %a.nav-link.btn.btn-primary.btn-lg{:href => logout_path} Logout
