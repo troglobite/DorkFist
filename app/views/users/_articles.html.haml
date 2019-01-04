@@ -4,6 +4,7 @@
         %div.card
             %dl
                 %dt.card-title
-                    = article.title
+                    %a{:href => articles_path(@article)} 
+                        = article.title
                 %dd.card-text
                     = article.text

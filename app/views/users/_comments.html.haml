@@ -3,7 +3,8 @@
     - @comments.each do |comment|
         %div.card
             %dl
-                %dt.card-subtitle 
+                %dt.card-subtitle
                     = comment.commenter
                 %dd.card-text 
                     = comment.body
+                = link_to @article.find(comment.article_id).title, articles_path(comment.article_id)
