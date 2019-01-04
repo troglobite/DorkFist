@@ -1,9 +1,9 @@
-%h3="Articles: "
+%h3.alert.alert-primary="Articles: "
 %div
     - @article.each do |article|
-        %div
+        %div.card
             %dl
-                %dt
+                %dt.card-title
                     = article.title
-                %dd
+                %dd.card-text
                     = article.text

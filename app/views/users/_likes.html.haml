@@ -1,5 +1,5 @@
 %div 
-    %h3= "Likes"
+    %h3.alert.alert-primary= "Likes"
     - @likes.each do |like|
-        %div
+        %div.btn.btn-outline-dark
             = link_to @article.find(like.article_id).title, articles_path(like.article_id)

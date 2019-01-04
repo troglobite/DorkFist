@@ -1,9 +1,9 @@
-%h3="Comments: "
+%h3.alert.alert-primary="Comments: "
 %div
     - @comments.each do |comment|
-        %h5= "Commenter"
-        %dl
-            %dt 
-                = comment.commenter
-            %dd 
-                = comment.body
+        %div.card
+            %dl
+                %dt.card-subtitle 
+                    = comment.commenter
+                %dd.card-text 
+                    = comment.body
