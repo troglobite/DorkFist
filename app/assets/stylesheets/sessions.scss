@@ -1,3 +1,24 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.login-card {
+  width: 38rem;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+}
+
+.submit-button {
+  width: 25%;
+}
+
+.new-user {
+  left: 50%;
+}
+
+.new-user-btn {
+  width: 40%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

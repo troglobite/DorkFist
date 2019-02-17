@@ -1,0 +1,29 @@
+- if flash[:error]
+    %div.alert.alert-danger= flash[:error]
+- elsif flash[:success] 
+    = flash[:success] 
+
+%div.jumbotron.jumbotron-fluid
+    %div.container
+        %h1.display-4
+            The Kitchen Sink
+        %p.lead
+            Basically just everything i could think of in one project
+
+%div.card.login-card
+    %div.card-body
+        = form_for :session, url: sessions_path do |form|
+            = form.label :email
+            = form.email_field :email, class: 'form-control', placeholder: 'Email'
+
+            = form.label :password
+            = form.password_field :password, class: 'form-control', placeholder: 'Password'
+            
+            = form.submit 'Login', :class => 'btn btn-primary submit-button'
+
+    %div.new-user-btn
+        %div.card
+            %h5.alert.alert-primary= "New User?"
+            = link_to 'Create an account', new_user_path, :class => 'btn btn-primary'
+                
+            
