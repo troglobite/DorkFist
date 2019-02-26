@@ -8,11 +8,11 @@
     -#                 %li= error       
     %div
         = form.label :title
-        = form.text_field :title
+        = form.text_field :title, :class => 'form-control'
     %div
         = form.label :text
-        = form.text_area :text
-    %div 
-        = form.submit
+        = form.text_area :text, :class => 'form-control'
+    %div
+        = form.submit :class => 'btn btn-primary'
 
     
