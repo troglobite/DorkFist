@@ -26,6 +26,15 @@ class ArticlesController < ApplicationController
         end
     end
 
+    # def update
+    #     @article = EditArticleService.new(params, current_user.id).call
+    #     if @article.update
+    #         redirect_to @article
+    #     else
+    #         render 'edit'
+    #     end
+    # end
+
     def update
         @article = Article.find(params[:id])
 

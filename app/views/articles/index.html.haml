@@ -4,11 +4,10 @@
         %h1.display-4= "The Kitchen Sink"
 
 %div.container-fluid
-    -# = link_to 'New Article', new_article_path, class: "btn btn-primary btn-block"
     %button.btn.btn-primary.btn-block{"data-toggle" => "collapse", "href" => "#newArticle"}
         New Article
     %div#newArticle.collapse
-        = render :partial => "form"
+        = render :partial => "new_form"
 - @article.each do |article|
     .card
         %h5.card-title= article.title
