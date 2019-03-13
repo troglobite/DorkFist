@@ -1,0 +1,10 @@
+%h1="Upload Photo"
+
+= form_with @photo, html: { multipart: true } do |f|
+    - if @photo.errors.any?
+        %div#error_explanation
+            ="#{= pluralize(@photo.errors.count, "error")} Prohibited this photo from saved:"
+        - @photo.errors.full_messages.each do |error|
+            %li
+                = error
+

@@ -1,0 +1,11 @@
+%div.page-header
+    %h1
+        Upload Photo
+
+%div.media
+    - @photos.each do |photo|
+        %div.media-left
+            = links_to = image_tag (photo.image.url, class: 'media-object'), photo.image.url, target: '_blank'
+        %div.media-body
+            %h4.media-heading
+                = photo.title
