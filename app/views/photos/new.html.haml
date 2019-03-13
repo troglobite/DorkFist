@@ -8,3 +8,12 @@
             %li
                 = error
 
+    %div.form-group
+        = f.label :title
+        = text_field :title, class: 'form-control'
+    %div.form-group
+        = f.label :image
+        = f. file_field :image, class: 'form-control'
+
+    %div.form-group
+        = f.submit 'Upload Photo', class: 'btn btn-default'
