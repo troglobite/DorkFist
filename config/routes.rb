@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'articles#index'
- 
+  root to: "photos#index"
+
   get 'users/new'
   get 'login', to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'
@@ -23,5 +24,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+
+  resources :photos
 
 end
