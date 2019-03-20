@@ -30,7 +30,6 @@ gem 'jbuilder', '~> 2.5'
 # Bootstrap gem
 gem "bootstrap", ">= 4.3.1"
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
-gem "paperclip", "~> 5.0.0"
 
 gem 'pry-rails', :group => :development
 
