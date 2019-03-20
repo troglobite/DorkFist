@@ -1,6 +1,10 @@
 %div.jumbotron
     %h1.display-4= @article.title
     %p.lead= @article.text
+    - @article.uploads.each do |upload|
+        - if upload.variable?
+            = link_to image_tag(upload.variant(resize: "400x400")), upload
+           
     %hr.my-4
     %div.container
         %div.col-sm

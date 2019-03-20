@@ -14,9 +14,13 @@
         .card-text= article.text
         %div
             = link_to 'Show', article_path(article), method: :get, class: "btn btn-primary btn-sm"
-            - if article.user_id == current_user.id
-                = link_to 'Edit', edit_article_path(article), class: "btn btn-primary btn-sm"
-                = link_to 'Destroy', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-primary btn-sm"
+            -# - if article.user_id == current_user.id
+            -#     %button.btn.btn-primary{"data-toggle" => "collapse", "href" => "#editArticle"}
+            -#         Edit Article
+            -#     %div#editArticle.collapse
+            -#         = render :partial => "edit_form", :locals => { article: article.id }
+                = link_to 'Edit', edit_article_path(article), class: "btn btn-primary btn-sm", :locals => { article: article.id }
+                = link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm"
             %hr      
 %div
     = link_to 'Log Out', logout_path, class: "btn btn-primary"
