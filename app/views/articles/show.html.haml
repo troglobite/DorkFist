@@ -1,6 +1,12 @@
 %div.jumbotron
     %h1.display-4= @article.title
     %p.lead= @article.text
+    - @article.uploads.each do |upload|
+        - if upload.variable?
+            = image_tag upload.variant(resize: "400x400")
+        - elsif upload.previewable?
+            = image_tag upload.previewable(resize: "400x400")
+           
     %hr.my-4
     %div.container
         %div.col-sm
