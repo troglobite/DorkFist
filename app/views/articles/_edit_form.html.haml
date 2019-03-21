@@ -1,4 +1,4 @@
-= form_with url: edit_article_path(article) do |form|
+= form_with model: @article do |form|
     -# - if @article.errors.any?
     -#     %div{:id => "errors-explanation"}
     -#         %h2
@@ -12,6 +12,9 @@
     %div
         = form.label :text
         = form.text_area :text, :class => 'form-control'
+    %div
+        = form.label :uploads
+        = form.file_field :uploads
     %div
         = form.submit :class => 'btn btn-primary'
 
