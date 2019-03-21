@@ -14,7 +14,11 @@
         = form.text_area :text, :class => 'form-control'
     %div
         = form.label :uploads
-        = form.file_field :uploads
+        = form.file_field :uploads, :class => 'form-control'
+    %div#upload
+        - @article.uploads.each do |upload|
+            = image_tag(upload.variant(resize: "400x400"))
+            -# = link_to 'Remove', delete_image_attachment_collection_url(image_url, method: :delete, data: { confirm: 'are you sure?' }
     %div
         = form.submit :class => 'btn btn-primary'
 

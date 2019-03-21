@@ -26,6 +26,13 @@ class ArticlesController < ApplicationController
         end
     end
 
+    def delete_upload
+        @image = ActiveStorage::Blob.find_signed(params[:id])
+        @image.purge
+
+        redirect_to @article
+    end
+
     # def update
     #     @article = EditArticleService.new(params, current_user.id).call
     #     if @article.update
