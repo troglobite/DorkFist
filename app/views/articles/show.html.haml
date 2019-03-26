@@ -4,6 +4,7 @@
     - @article.uploads.each do |upload|
         - if upload.variable?
             = link_to image_tag(upload.variant(resize: "400x400")), upload
+            = link_to 'Remove', delete_upload_article_path(@article, upload.id), method: :delete
            
     %hr.my-4
     %div.container
