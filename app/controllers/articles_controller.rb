@@ -29,7 +29,8 @@ class ArticlesController < ApplicationController
     def delete_upload
         @article = Article.find(params[:id]) 
         @image = ActiveStorage::Blob.find(params[:upload_id])
-        @image.purge
+        binding.pry
+        @image.purge_later
 
         redirect_to @article
     end
