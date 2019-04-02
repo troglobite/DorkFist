@@ -1,6 +1,6 @@
 class UploadsController < ApplicationController
-    def delete
-        @image = ActiveStorage::Blob.find(params[:upload_id])
+    def delete_upload
+        @image = @image = Article.find(params[:id]).uploads
         @image.purge
 
         # redirect_to root_path

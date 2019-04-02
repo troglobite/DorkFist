@@ -26,7 +26,5 @@ Rails.application.routes.draw do
   end
 
   # delete "delete_upload/:upload_id", controller: :uploads, action: :delete, as: 'delete_upload'
-  resources :articles do
-    delete "delete_upload/:upload_id", action: :delete_upload, as: 'delete_upload'
-  end
+  delete "delete_upload/:id", to: 'uploads#delete_upload', as: 'delete_upload', action: :delete
 end
