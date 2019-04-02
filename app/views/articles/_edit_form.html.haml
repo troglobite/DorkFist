@@ -1,4 +1,4 @@
-= form_with url: edit_article_path(article) do |form|
+= form_with model: @article do |form|
     -# - if @article.errors.any?
     -#     %div{:id => "errors-explanation"}
     -#         %h2
@@ -12,6 +12,13 @@
     %div
         = form.label :text
         = form.text_area :text, :class => 'form-control'
+    %div
+        = form.label :uploads
+        = form.file_field :uploads, :class => 'form-control'
+    %div#upload
+        - @article.uploads.each do |upload|
+            = image_tag(upload.variant(resize: "400x400"))
+            -# = link_to 'Remove', delete_upload_article_path(@article, upload.id), method: :delete
     %div
         = form.submit :class => 'btn btn-primary'
 

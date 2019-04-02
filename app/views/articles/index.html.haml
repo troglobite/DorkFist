@@ -12,6 +12,9 @@
     .card
         %h5.card-title= article.title
         .card-text= article.text
+        - article.uploads.each do |upload|
+            %div.media
+                = image_tag upload.variant(resize: "150x150"), class: "mr-3"
         %div
             = link_to 'Show', article_path(article), method: :get, class: "btn btn-primary btn-sm"
             -# - if article.user_id == current_user.id

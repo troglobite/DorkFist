@@ -26,6 +26,13 @@ class ArticlesController < ApplicationController
         end
     end
 
+    # def delete_upload
+    #     @image = Article.find(params[:article_id]).uploads
+    #     @image.purge_later
+
+    #     redirect_to root_path
+    # end
+
     # def update
     #     @article = EditArticleService.new(params, current_user.id).call
     #     if @article.update
@@ -47,6 +54,7 @@ class ArticlesController < ApplicationController
 
     def destroy
         @article = Article.find(params[:id])
+        @article.uploads.purge
         @article.destroy
 
         redirect_to articles_path
