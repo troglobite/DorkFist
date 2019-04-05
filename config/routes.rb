@@ -9,22 +9,23 @@ Rails.application.routes.draw do
   get '/users/:user_id/articles/:article_id/likes/new(.:format)', to: 'likes#new'
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :show]
+  resources :users
 
   resources :users do 
     resources :articles do 
       resources :likes
     end
+    resources :avatar, only: [:edit, :new]
   end
 
   resources :articles do 
     resources :likes
-  end
-
-  resources :articles do
     resources :comments
   end
 
-  # delete "delete_upload/:upload_id", controller: :uploads, action: :delete, as: 'delete_upload'
+  # resources :articles do
+  #   resources :comments
+  # end
+
   delete "delete_upload/:id", to: 'uploads#delete_upload', as: 'delete_upload', action: :delete
 end

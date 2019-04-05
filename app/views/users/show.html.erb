@@ -2,7 +2,7 @@
     <h1>Profile View</h1>
     <strong>User</strong>
     <%= @user.email %><br>
-</p>
+    <strong>User ID: </strong><%= @user.id %>
 
 <%= render :partial => "articles" %>
 
@@ -10,8 +10,6 @@
 
 <%= render :partial => "likes" %>
 
-<%= @user.id %>
-<%= @session %>
 <p>
     <%= link_to 'Back to articles', articles_path, method: :get %>
 </p>

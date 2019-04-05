@@ -18,7 +18,6 @@
     %div#upload
         - @article.uploads.each do |upload|
             = image_tag(upload.variant(resize: "400x400"))
-            -# = link_to 'Remove', delete_upload_article_path(@article, upload.id), method: :delete
     %div
         = form.submit :class => 'btn btn-primary'
 
