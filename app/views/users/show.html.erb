@@ -2,7 +2,8 @@
     <h1>Profile View</h1>
     <strong>User</strong>
     <%= @user.email %><br>
-    <strong>User ID: </strong><%= @user.id %>
+    <%= image_tag(@user.avatar) %>
+    <strong>User ID: </strong><%= @user.id %>  
 
 <%= render :partial => "articles" %>
 

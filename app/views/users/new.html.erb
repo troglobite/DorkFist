@@ -25,6 +25,10 @@
         <%= user_form.label :password_confirmation %>
         <%= user_form.password_field :password_confirmation, class: 'form-control' %>
     </div>
+    <div class="form-group">
+        <%= user_form.label :avatar %>
+        <%= user_form.file_field :avatar, class: 'form-control' %>
+    </div>
     <%= user_form.submit 'Register', class: 'btn btn-primary'%>
 <% end %>
 
