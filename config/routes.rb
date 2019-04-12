@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   resources :users do 
     resources :articles do 
       resources :likes
+      resources :comments
     end
-    resources :avatar, only: [:edit, :new]
   end
 
   resources :articles do 

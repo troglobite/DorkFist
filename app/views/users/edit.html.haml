@@ -1,0 +1,8 @@
+%div
+    = form_for @user, :url => {:action => 'update'}, :html => { :multipart => true } do |user_form|
+        %div
+            = user_form.label :avatar
+            = user_form.file_field :avatar
+        %div
+            = user_form.submit "upload"
+

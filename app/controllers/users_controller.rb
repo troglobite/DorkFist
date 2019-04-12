@@ -15,6 +15,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    redirect_to user_path(@user)
+  end
+
   def create
     @user = User.new(user_params)
 

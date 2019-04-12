@@ -1,0 +1,26 @@
+%div
+    %h1="Profile View"
+    %strong="User: "
+    = @user.email
+    %strong="User I.D: " + @user.id.to_s
+
+%div
+    = image_tag(@user.avatar) if @user.avatar.attached?
+    = form_for @user, :url => {:action => 'update'} do |user_form|
+        %div
+            = user_form.label :avatar
+            = user_form.file_field :avatar
+        %div
+            = user_form.submit "upload"
+    
+
+%div
+    = render :partial => "articles"
+%div
+    = render :partial => "comments"
+%div
+    = render :partial => "likes"
+
+= link_to 'Back to articles', articles_path, method: :get
+
+= link_to 'Edit Profile', user_path, method: :put
