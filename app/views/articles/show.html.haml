@@ -17,6 +17,7 @@
                 %small.badge.badge-dark=" Edited "
         - if current_user.id != @article.user_id
             %div.btn.btn-outline-primary.btn-sm= link_to 'Like', user_article_likes_path(current_user.id, @article), method: :post
+        = link_to 'Delete Article', user_article_path( current_user.id, @article.id) , method: :delete
 
 %div.container
     %h4.alert.alert-primary= "Comments"

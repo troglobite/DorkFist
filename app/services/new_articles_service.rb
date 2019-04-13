@@ -7,6 +7,11 @@ class NewArticlesService
 
     def call
         @article.permit!
-        article = Article.new(@article.merge(user_id: @user))
+        @article = Article.new(@article.merge(user_id: @user))
+        if @article.save
+            redirect_to @article
+        else
+            render :new
+        end
     end
 end
