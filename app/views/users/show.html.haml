@@ -6,7 +6,7 @@
 
 %div
     = image_tag(@user.avatar) if @user.avatar.attached?
-    = form_for @user, :url => {:action => 'update'} do |user_form|
+    = form_for @user, :action => 'update' do |user_form|
         %div
             = user_form.label :avatar
             = user_form.file_field :avatar
