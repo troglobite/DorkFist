@@ -25,22 +25,13 @@ class ArticlesController < ApplicationController
         @article = UpdateArticleService.new(params, current_user.id).call
     end
 
-    # def update
-    #     @article = Article.find(params[:id])
-
-    #     if @article.update(article_params)
-    #         redirect_to @article
-    #     else 
-    #         render 'edit'
-    #     end
-    # end
-
     def destroy
-        @article = Article.find(params[:id])
-        @article.uploads.purge
-        @article.destroy
+        @article = DestroyArticlesService.new(params, current_user.id).call
+        # @article = Article.find(params[:id])
+        # @article.uploads.purge
+        # @article.destroy
 
-        redirect_to articles_path
+        # redirect_to articles_path
     end
 
     private
