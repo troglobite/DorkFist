@@ -6,12 +6,8 @@ class DestroyArticlesService
     end
 
     def call 
-        # @article = Article.find(article_params[:id])
         @article.uploads.purge
-        if @article.destroy
-            binding.pry
-            redirect_to root_path
-        end
+        @article.destroy
     end
 
 end
