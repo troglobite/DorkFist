@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
         # @article = Article.find(params[:article_id])
         # @comment = @article.comments.create(comment_params.merge(user_id: current_user.id))
         # redirect_to article_path(@article)
-        @comment = ::CommentServices::NewCommentService.new(params[:article_id], current_user).call
+        @comment = ::CommentServices::NewCommentService.new(params, current_user).call
     end
 
     def edit
