@@ -10,7 +10,6 @@ module CommentServices
 
         def call
             @comment = @comments.create(comment_params.merge(user_id: @user.id))
-            redirect_to article_path(@article)
         end
 
     private
