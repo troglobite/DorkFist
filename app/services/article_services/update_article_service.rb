@@ -4,7 +4,7 @@ module ArticleServices
         def initialize(article_params, current_user)
             @params = article_params
             @article = Article.find(article_params[:id])
-            @user = User,fubd(current_user.id)
+            @user = User.find(current_user.id)
         end
 
         def call
