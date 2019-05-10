@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  text: MyText
+  title: article fixture one
+  text: article fixture text one
+  user: valid
 
 two:
-  title: MyString
-  text: MyText
+  title: article fixture two
+  text: article fixture two text
+  user: valid

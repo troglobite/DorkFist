@@ -1,9 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  email: MyString
-  password_digest: MyString
+valid:
+  email: "test_valid@example.com"
+  password_digest: "111"
 
-two:
-  email: MyString
-  password_digest: MyString
+old:
+  email: "test_old@example.com"
+  password_digest: "222"
+  created_at: <%= 2.weeks.ago %>
