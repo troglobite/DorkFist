@@ -8,7 +8,7 @@ module ArticleServices
 
         def call
             @article.permit!
-            @article = Article.new(@article.merge(user_id: @user))
+            @article = Article.create(@article.merge(user_id: @user))
             if @article.errors.any?
                 puts(@article.errors.count)
                 @article.errors.full_messages.each do |error|

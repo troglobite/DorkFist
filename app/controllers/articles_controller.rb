@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
 
     def create
         @article = ::ArticleServices::NewArticlesService.new(params, current_user.id).call
-        redirect_to @article
+        redirect_to articles_path
     end
 
     def update
