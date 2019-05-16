@@ -10,7 +10,6 @@ module ArticleServices
             @article.permit!
             @article = Article.new(@article.merge(user_id: @user))
             if @article.save
-                binding.pry
                 redirect_to @article
             else
                 render :new
