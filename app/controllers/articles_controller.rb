@@ -18,45 +18,15 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        @article = NewArticlesService.new(params, current_user.id).call
-        if @article.save
-            redirect_to @article
-        else
-            render :new
-        end
+        @article = ::ArticleServices::NewArticlesService.new(params, current_user.id).call
     end
 
-    # def delete_upload
-    #     @image = Article.find(params[:article_id]).uploads
-    #     @image.purge_later
-
-    #     redirect_to root_path
-    # end
-
-    # def update
-    #     @article = EditArticleService.new(params, current_user.id).call
-    #     if @article.update
-    #         redirect_to @article
-    #     else
-    #         render 'edit'
-    #     end
-    # end
-
     def update
-        @article = Article.find(params[:id])
-
-        if @article.update(article_params)
-            redirect_to @article
-        else 
-            render 'edit'
-        end
+        @article = ::ArticleServices::UpdateArticleService.new(params, current_user.id).call
     end
 
     def destroy
-        @article = Article.find(params[:id])
-        @article.uploads.purge
-        @article.destroy
-
+        @article = ::ArticleServices::DestroyArticlesService.new(params, current_user.id).call
         redirect_to articles_path
     end
 
