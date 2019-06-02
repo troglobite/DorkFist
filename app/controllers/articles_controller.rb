@@ -23,8 +23,8 @@ class ArticlesController < ApplicationController
     # end
 
     def create
-
-        @article = Article.new(article_params.merge(user_id: current_user))
+        @article = Article.new(article_params.merge(user_id: current_user.id))
+        binding.pry
         if @article.save
             flash[:success] = 'Your article has been posted'
             redirect_to @article
