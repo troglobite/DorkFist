@@ -8,12 +8,12 @@ module ArticleServices
 
         def call
             @article.permit!
-            @article = Article.create(@article.merge(user_id: @user))
-            if @article.errors.any?
-                puts(@article.errors.count)
-                @article.errors.full_messages.each do |error|
-                    puts(error)
-                end
+            @article = Article.new(@article.merge(user_id: @user))
+            if @article.save
+                controller.flash[:success] = 'Your article has been posted'
+            else
+                controller.flash[:alert] = 'There was an issue saving your article'
+                render :new
             end
         end
     end

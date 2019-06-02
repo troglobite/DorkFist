@@ -17,9 +17,21 @@ class ArticlesController < ApplicationController
         @article = Article.find(params[:id])
     end
 
+    # def create
+    #     @article = ::ArticleServices::NewArticlesService.new(params, current_user.id).call
+    #     redirect_to articles_path
+    # end
+
     def create
-        @article = ::ArticleServices::NewArticlesService.new(params, current_user.id).call
-        redirect_to articles_path
+
+        @article = Article.new(article_params.merge(user_id: current_user))
+        if @article.save
+            flash[:success] = 'Your article has been posted'
+            redirect_to @article
+        else
+            flash[:alert] = 'There was an issue saving your article'
+            render :new
+        end
     end
 
     def update
