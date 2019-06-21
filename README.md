@@ -19,4 +19,4 @@ How to run the test suite:
 Not created yet ... i know, i know im terrible
 
 Deployment instructions:
-Not currently deployed to anything.
+Currently on heroku
