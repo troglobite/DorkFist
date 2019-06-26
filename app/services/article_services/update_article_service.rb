@@ -1,17 +1,15 @@
 module ArticleServices
     class UpdateArticleService
 
-        def initialize(article_params, current_user)
-            @params = article_params
-            @article = Article.find(article_params[:id])
-            @user = User.find(current_user.id)
+        def initialize(params, current_user)
+            @params = params
+            @article = Article.find(@params[:id])
+            @user = User.find(current_user)
         end
 
         def call
-            @article = Article.find(article_params[:id])
-
             if @article.update(article_params)
-                redirect_to @article
+                Rails.application.routes.url_helpers.article_path(@article)
             else 
                 render 'edit'
             end
