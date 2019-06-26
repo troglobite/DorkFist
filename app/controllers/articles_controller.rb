@@ -27,7 +27,8 @@ class ArticlesController < ApplicationController
     end
 
     def update
-        @article = ::ArticleServices::UpdateArticleService.new(params, current_user.id).call
+        # @article = ::ArticleServices::UpdateArticleService.new(params, current_user.id).call
+        @article = Article.find(params[:id])
         if @article.update(article_params)
             redirect_to @article
         else 

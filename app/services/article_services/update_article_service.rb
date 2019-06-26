@@ -8,11 +8,7 @@ module ArticleServices
         end
 
         def call
-            if @article.update(article_params)
-                Rails.application.routes.url_helpers.article_path(@article)
-            else 
-                render 'edit'
-            end
+            @article.update(article_params)
         end
 
         private
