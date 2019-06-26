@@ -19,10 +19,21 @@ class ArticlesController < ApplicationController
 
     def create
         @article = ::ArticleServices::NewArticlesService.new(params, current_user.id).call
+        if @article.save
+            redirect_to @article
+        else
+            render :new
+        end
     end
 
     def update
-        @article = ::ArticleServices::UpdateArticleService.new(params, current_user.id).call
+        # @article = ::ArticleServices::UpdateArticleService.new(params, current_user.id).call
+        @article = Article.find(params[:id])
+        if @article.update(article_params)
+            redirect_to @article
+        else 
+            render 'edit'
+        end
     end
 
     def destroy
